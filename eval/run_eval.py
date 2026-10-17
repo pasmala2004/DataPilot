@@ -30,6 +30,14 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Callable, Optional, Sequence
 
+<<<<<<< HEAD
+=======
+from dotenv import load_dotenv
+
+# Load .env file at startup (before any other imports that might use env vars)
+load_dotenv(override=False)
+
+>>>>>>> 5b34b07 (feat: evaluation harness vs pandas ground truth with retry on/off ablation)
 import pandas as pd
 
 from agent.llm import LLMConfigError, get_llm, is_rate_limit, resolve_model_name, resolve_settings
