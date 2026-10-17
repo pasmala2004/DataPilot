@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Generated reports/charts (never committed)
+outputs/*
+!outputs/.gitkeep
+
+# The user's own Excel/CSV files stay local (may be private)
+data/*
+!data/.gitkeep
+eval/data/*
+!eval/data/.gitkeep
+eval/results/*
+!eval/results/.gitkeep
+
+# Local secrets and logs
+.env
+eval/*.log
+eval_*.log
+*.zip
+.vscode/
