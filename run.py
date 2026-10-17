@@ -18,8 +18,17 @@ import asyncio
 import sys
 from typing import Any, Callable, Sequence
 
+<<<<<<< HEAD
 from langchain_core.language_models.chat_models import BaseChatModel
 
+=======
+from dotenv import load_dotenv
+from langchain_core.language_models.chat_models import BaseChatModel
+
+# Load .env file at startup (before any other imports that might use env vars)
+load_dotenv(override=False)
+
+>>>>>>> 1c3c0ce (feat: LangGraph agent loop with router, observation and retry)
 from agent.graph import run_agent
 from agent.llm import LLMConfigError, describe_exception, get_llm, hint_for_error
 from agent.mcp_client import excel_session
