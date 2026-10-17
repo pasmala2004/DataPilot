@@ -1,0 +1,23 @@
+# DataPilot app. The model is OpenRouter (an external API): column names, the 5-row preview, tool results and capped
+# run_pandas output are sent to OpenRouter and the model provider. Do not upload confidential data.
+#   cp .env.example .env      (put your OPENROUTER_API_KEY in it; .env is gitignored)
+#   docker compose up -d --build
+services:
+  app:
+    build: .
+    restart: unless-stopped
+    environment:
+      # Passed through from .env / your shell. Never written into the image or the compose file.
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:?set OPENROUTER_API_KEY in .env}
+      OPENROUTER_MODEL: ${OPENROUTER_MODEL:-openai/gpt-4o-mini}
+      OPENROUTER_TIMEOUT_S: ${OPENROUTER_TIMEOUT_S:-120}
+    ports:
+      # Localhost only: the app has no login. Put an authenticating reverse proxy in front to expose it.
+      - "${DATAPILOT_BIND:-127.0.0.1}:${DATAPILOT_PORT:-8501}:8501"
+    volumes:
+      - datapilot_data:/app/data
+      - datapilot_outputs:/app/outputs
+
+volumes:
+  datapilot_data:
+  datapilot_outputs:
