@@ -12,6 +12,14 @@ import os
 from pathlib import Path
 from typing import Any, Optional
 
+<<<<<<< HEAD
+=======
+from dotenv import load_dotenv
+
+# Load .env file at startup (before any other imports that might use env vars)
+load_dotenv(override=False)
+
+>>>>>>> 1446015 (feat: Streamlit app with per-user sessions, live trace and gated downloads)
 import pandas as pd
 import streamlit as st
 
