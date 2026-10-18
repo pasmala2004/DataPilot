@@ -224,12 +224,6 @@ machine dies) and run the same command again: finished (question, setting, repea
 **Results in this README.** `python -m eval.summarize <run_dir> --update-readme` rewrites the block below from the
 run's data (add `--compare <earlier_run>` to keep a before/after pair). Nothing in it is typed by hand.
 
-<!-- EVAL:START -->
-<<<<<<< HEAD
-No evaluation has been run yet. TODO(results): run the eval, then `python -m eval.summarize eval/results/<name> --update-readme`.
-=======
-## Verification Status
-
 **Model tested:** `openai/gpt-4o-mini` via OpenRouter  
 **Date:** October 17, 2026  
 **Status:** Core functionality verified, full evaluation pending
