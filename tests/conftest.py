@@ -5,11 +5,8 @@ No network, and nothing from the real ./data folder is ever touched.
 
 from __future__ import annotations
 
-<<<<<<< HEAD
-=======
-import os
->>>>>>> 0c4944c (chore: remaining files)
 from pathlib import Path
+from typing import Any
 
 import numpy as np
 import pandas as pd
@@ -18,21 +15,6 @@ import pytest
 from core import Config
 
 
-<<<<<<< HEAD
-=======
-@pytest.fixture(scope="session", autouse=True)
-def prevent_dotenv_in_tests():
-    """Prevent .env from interfering with tests that check for missing keys."""
-    # Store original value
-    original = os.environ.get("OPENROUTER_API_KEY")
-    # Tests will set this explicitly when needed via monkeypatch
-    yield
-    # Restore after tests
-    if original:
-        os.environ["OPENROUTER_API_KEY"] = original
-
-
->>>>>>> 0c4944c (chore: remaining files)
 @pytest.fixture
 def sales_df() -> pd.DataFrame:
     """6 rows: 1 null region, 1 null amount, rows 2 and 3 are exact duplicates."""
