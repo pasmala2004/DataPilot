@@ -23,12 +23,6 @@ flowchart LR
 > and `run_pandas` output (up to 20 rows) are sent to OpenRouter and the model provider. The app asks you to confirm this
 > before every run.
 
-<<<<<<< HEAD
-Screenshots: TODO(results) add `docs/img/*.png` after the local app smoke test (A5).
-=======
-**Verification:** Core functionality tested and working with `openai/gpt-4o-mini` via OpenRouter. Tool calls, report generation, and number verification all operational. See evaluation section below for detailed status.
->>>>>>> 543f677 (docs: README, deployment notes and project context)
-
 Project context and rules: `docs/CONTEXT.md`. Progress: `docs/PROGRESS.md`. Deployment: `docs/DEPLOY.md`.
 
 ## Quickstart
